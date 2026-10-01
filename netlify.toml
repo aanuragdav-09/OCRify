@@ -1,0 +1,4 @@
+[build]
+  base = "text-app"
+  command = "npm ci --include=dev && npm run build"
+  publish = "build"
