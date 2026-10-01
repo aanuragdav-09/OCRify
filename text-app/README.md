@@ -2,6 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Netlify deployment
+
+The repository-root `netlify.toml` runs `npm ci --include=dev && npm run build`
+inside `text-app`, then publishes `text-app/build`. Installing from the lockfile
+explicitly makes the build work with CLI deploys that do not run Netlify's hosted
+dependency-installation step, and ensures build tools are available even when
+development dependencies would otherwise be omitted. These file-based settings
+override the corresponding Netlify UI settings.
+
+This is a React application, not a Python project. Its `package.json` is in
+`text-app`, so running npm at the repository root fails. The build uses the
+existing `react-scripts` dependency; Vite is not configured for this project.
+
 ## Available Scripts
 
 In the project directory, you can run:
